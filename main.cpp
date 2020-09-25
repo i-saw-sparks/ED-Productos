@@ -1,6 +1,9 @@
 #include <iostream>
+#include "Menu.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Menu menu;
+
+    menu.ejecutar(std::cout, std::cin);
     return 0;
 }

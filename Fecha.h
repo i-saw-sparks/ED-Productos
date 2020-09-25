@@ -24,7 +24,7 @@ public:
     void setMes(short mes);
     void setAnio(int anio);
 
-    std::string toString();
+    std::string toString() const;
 
     bool operator==(const Fecha &rhs) const;
     bool operator!=(const Fecha &rhs) const;

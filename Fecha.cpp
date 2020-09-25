@@ -66,6 +66,6 @@ bool Fecha::operator>=(const Fecha &rhs) const {
     return (rhs > *this)||(rhs == *this);;
 }
 
-std::string Fecha::toString() {
+std::string Fecha::toString() const {
     return std::to_string(dia) + "/" + std::to_string(mes) + "/" + std::to_string(anio) + "/";
 }

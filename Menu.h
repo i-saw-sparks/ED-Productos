@@ -5,9 +5,16 @@
 #ifndef ACTIVIDAD2_MENU_H
 #define ACTIVIDAD2_MENU_H
 
+#include <ostream>
+#include <istream>
+#include <iostream>
 
 class Menu {
+public:
+    void imprimirEncabezado(std::ostream&) const;
+    int ejecutar(std::ostream&, std::istream&) const;
 
+    Menu();
 };
 
 
