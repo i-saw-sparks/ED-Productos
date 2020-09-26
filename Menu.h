@@ -8,12 +8,14 @@
 #include <ostream>
 #include <istream>
 #include <iostream>
+#include "Producto.h"
 
 class Menu {
 public:
     void imprimirEncabezado(std::ostream&) const;
     int ejecutar(std::ostream&, std::istream&) const;
-
+    Producto ingresarProducto(std::ostream&, std::istream&) const;
+    Producto removerProducto(std::ostream&, std::istream&) const;
     Menu();
 };
 

@@ -4,7 +4,7 @@
 
 #include "Producto.h"
 
-const Fecha& Producto::getFechaEntrada() const {
+const Fecha &Producto::getFechaEntrada() const {
     return fechaEntrada;
 }
 
@@ -78,9 +78,16 @@ Producto::Producto(const Fecha &fechaEntrada, const std::array<char, 13> &codigo
 
 Producto::Producto() {}
 
-Producto::Producto(Producto& obj) : fechaEntrada(obj.fechaEntrada),
+Producto::Producto(Producto const &obj) : fechaEntrada(obj.fechaEntrada),
                                     codigoBarras(obj.codigoBarras),
                                     nombre(obj.nombre), peso(obj.peso),
                                     precioMayoreo(obj.precioMayoreo),
                                     precioMenudeo(obj.precioMenudeo),
                                     existencia(obj.existencia) {}
+
+std::string Producto::toString() const {
+    std::string codigo(std::begin(codigoBarras), std::end(codigoBarras));
+    return codigo + "  " + nombre + "  " + std::to_string(peso) + "  "
+           + std::to_string(precioMayoreo) + "  " + std::to_string(precioMenudeo) + "  "
+           + std::to_string(existencia) + "  " + fechaEntrada.toString();
+}

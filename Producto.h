@@ -23,7 +23,7 @@ public:
 
     Producto();
 
-    Producto(Producto &obj);
+    Producto(Producto const &obj);
 
     const Fecha &getFechaEntrada() const;
     void setFechaEntrada(const Fecha &fechaEntrada);
@@ -48,6 +48,8 @@ public:
 
     bool operator==(const Producto &rhs) const;
     bool operator!=(const Producto &rhs) const;
+
+    std::string toString() const;
 };
 
 

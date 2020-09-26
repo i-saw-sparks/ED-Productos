@@ -67,5 +67,5 @@ bool Fecha::operator>=(const Fecha &rhs) const {
 }
 
 std::string Fecha::toString() const {
-    return std::to_string(dia) + "/" + std::to_string(mes) + "/" + std::to_string(anio) + "/";
+    return std::to_string(dia) + "/" + std::to_string(mes) + "/" + std::to_string(anio);
 }
