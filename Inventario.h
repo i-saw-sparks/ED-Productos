@@ -9,6 +9,7 @@
 #include <array>
 #include <ostream>
 #include <iostream>
+#include <iomanip>
 #include "Producto.h"
 
 class Inventario {

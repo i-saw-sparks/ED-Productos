@@ -8,7 +8,9 @@ int main() {
     Inventario inv;
     bool ejecucion = true;
 
+
     do {
+        std::cout << std::setprecision(2);
         switch (menu.ejecutar(std::cout, std::cin)) {
             case 1:
                 inv.imprimirInventario(std::cout);
@@ -21,14 +23,14 @@ int main() {
             case 3:
                 inv.removerProducto(menu.removerProducto(std::cout, std::cin));
                 break;
-
+            case 4:
+                ejecucion = false;
+                break;
             default:
                 std::cout<<"Opcion no valida";
 
         }
-        std::cout <<std::endl<<"Quieres seguir ejecutando el programa" << std::endl << "1- Si" << std::endl << "0 - No";
-        std::cin >> ejecucion;
-        //system("cls");
+
     } while (ejecucion);
     return 0;
 }

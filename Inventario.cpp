@@ -19,7 +19,7 @@ void Inventario::setListaProds(const std::vector<Producto> &inventario) {
 }
 
 void Inventario::agregarLote(Producto prod) {
-    for (auto& x : listaProds) {
+    for (auto &x : listaProds) {
         if (x.getCodigoBarras() == prod.getCodigoBarras()) {
             x.setExistencia(x.getExistencia() + prod.getExistencia());
             return;
@@ -47,11 +47,17 @@ void Inventario::removerProducto(std::array<char, 13> &codigo) {
     }
 }
 
-void Inventario::imprimirInventario(std::ostream& os) const {
-    for (int i = 0; i<listaProds.size(); ++i) {
+void Inventario::imprimirInventario(std::ostream &os) const {
+    const int tab = 15;
+    os << std::setw(tab) << "Codigo de barras  " << "Nombre     " << "   Peso    "  << "   Precio M "
+       << "   Precio m " << "Existencia "
+       << "Fecha de ingreso";
+
+    for (int i = 0; i < listaProds.size(); ++i) {
         std::string str(listaProds[i].toString());
-        os<<std::endl<<str;
+        os << std::endl<< str;
     }
+    os<<std::endl;
 }
 
 
