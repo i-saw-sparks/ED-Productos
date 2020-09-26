@@ -16,6 +16,7 @@ public:
     int ejecutar(std::ostream&, std::istream&) const;
     Producto ingresarProducto(std::ostream&, std::istream&) const;
     Producto removerProducto(std::ostream&, std::istream&) const;
+    int removerCantidad(std::ostream&, std::istream&) const;
     Menu();
 };
 

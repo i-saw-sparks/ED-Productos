@@ -78,11 +78,18 @@ Producto Menu::ingresarProducto(std::ostream &os, std::istream &is) const {
 Producto Menu::removerProducto(std::ostream &os, std::istream &is) const {
     Producto prod;
     std::array<char, 13> arrIn;
-    os << std::endl << "Ingrese el codigo de barras del producto que desea borrar"<<std::endl;
+    os << std::endl << "Ingrese el codigo de barras del producto que desea retirar"<<std::endl;
     for (int i = 0; i < 13; ++i) {
         is >> arrIn[i];
     }
     prod.setCodigoBarras(arrIn);
     return prod;
+}
+
+int Menu::removerCantidad(std::ostream &os, std::istream &is) const {
+    int cant;
+    os<<std::endl<<"Que cantidad de este producto deseas remover?";
+    is>>cant;
+    return cant;
 }
 

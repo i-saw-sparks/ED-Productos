@@ -21,8 +21,8 @@ public:
     Inventario(const std::vector<Producto> &inventario);
 
     void agregarLote(Producto);
-    void removerProducto(Producto);
-    void removerProducto(std::array<char, 13>&);
+    void removerProducto(Producto, int);
+    void removerProducto(std::array<char, 13>&, int);
     void imprimirInventario(std::ostream&) const;
 
     const std::vector<Producto> &getListaProds() const;

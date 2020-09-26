@@ -21,7 +21,7 @@ int main() {
                 break;
 
             case 3:
-                inv.removerProducto(menu.removerProducto(std::cout, std::cin));
+                inv.removerProducto(menu.removerProducto(std::cout, std::cin), menu.removerCantidad(std::cout, std::cin));
                 break;
             case 4:
                 ejecucion = false;

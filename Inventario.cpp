@@ -29,19 +29,23 @@ void Inventario::agregarLote(Producto prod) {
     listaProds.push_back(in);
 }
 
-void Inventario::removerProducto(Producto prod) {
+void Inventario::removerProducto(Producto prod, int cantidad) {
     for (int i = 0; i < listaProds.size(); ++i) {
-        if (listaProds[i].getCodigoBarras() == prod.getCodigoBarras()) {
-            listaProds.erase(listaProds.begin() + i);
+        if (listaProds[i] == prod) {
+            listaProds[i].setExistencia(listaProds[i].getExistencia() - cantidad);
+            if(listaProds[i].getExistencia() == 0)
+                listaProds.erase(listaProds.begin() + i);
             return;
         }
     }
 }
 
-void Inventario::removerProducto(std::array<char, 13> &codigo) {
+void Inventario::removerProducto(std::array<char, 13> &codigo, int cantidad) {
     for (int i = 0; i < listaProds.size(); ++i) {
         if (listaProds[i].getCodigoBarras() == codigo) {
-            listaProds.erase(listaProds.begin() + i);
+            listaProds[i].setExistencia(listaProds[i].getExistencia() - cantidad);
+            if(listaProds[i].getExistencia() == 0)
+                listaProds.erase(listaProds.begin() + i);
             return;
         }
     }
