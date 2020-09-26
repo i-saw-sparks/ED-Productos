@@ -67,3 +67,20 @@ bool Producto::operator==(const Producto &rhs) const {
 bool Producto::operator!=(const Producto &rhs) const {
     return !(rhs == *this);
 }
+
+Producto::Producto(const Fecha &fechaEntrada, const std::array<char, 13> &codigoBarras, const std::string &nombre,
+                   float peso, float precioMayoreo, float precioMenudeo, int existencia) : fechaEntrada(fechaEntrada),
+                                                                                           codigoBarras(codigoBarras),
+                                                                                           nombre(nombre), peso(peso),
+                                                                                           precioMayoreo(precioMayoreo),
+                                                                                           precioMenudeo(precioMenudeo),
+                                                                                           existencia(existencia) {}
+
+Producto::Producto() {}
+
+Producto::Producto(Producto& obj) : fechaEntrada(obj.fechaEntrada),
+                                    codigoBarras(obj.codigoBarras),
+                                    nombre(obj.nombre), peso(obj.peso),
+                                    precioMayoreo(obj.precioMayoreo),
+                                    precioMenudeo(obj.precioMenudeo),
+                                    existencia(obj.existencia) {}

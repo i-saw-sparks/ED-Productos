@@ -18,6 +18,13 @@ private:
     int existencia;
 
 public:
+    Producto(const Fecha &fechaEntrada, const std::array<char, 13> &codigoBarras, const std::string &nombre, float peso,
+             float precioMayoreo, float precioMenudeo, int existencia);
+
+    Producto();
+
+    Producto(Producto &obj);
+
     const Fecha &getFechaEntrada() const;
     void setFechaEntrada(const Fecha &fechaEntrada);
 
@@ -41,7 +48,6 @@ public:
 
     bool operator==(const Producto &rhs) const;
     bool operator!=(const Producto &rhs) const;
-
 };
 
 
