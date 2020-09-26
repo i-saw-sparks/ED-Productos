@@ -19,7 +19,7 @@ void Inventario::setListaProds(const std::vector<Producto> &inventario) {
 }
 
 void Inventario::agregarLote(Producto prod) {
-    for (auto x : listaProds) {
+    for (auto& x : listaProds) {
         if (x.getCodigoBarras() == prod.getCodigoBarras()) {
             x.setExistencia(x.getExistencia() + prod.getExistencia());
             return;
